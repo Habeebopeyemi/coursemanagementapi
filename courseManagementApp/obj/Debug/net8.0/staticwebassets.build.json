@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "lX91nR/L4qAIDi+XaKHarfwI2chbeXVJtklG8YTGomM=",
+  "Source": "courseManagementApi",
+  "BasePath": "_content/courseManagementApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
