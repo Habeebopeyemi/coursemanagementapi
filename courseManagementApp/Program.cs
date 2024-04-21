@@ -1,3 +1,4 @@
+using courseManagementApi;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
@@ -28,6 +29,8 @@ builder.Services.AddProblemDetails();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddSingleton<CoursesData>();
 
 var app = builder.Build();
 
