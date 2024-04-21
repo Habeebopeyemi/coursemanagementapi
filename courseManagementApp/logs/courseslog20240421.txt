@@ -770,3 +770,114 @@ VALUES (N'20240421171319_CourseDescriptionNullable', N'8.0.4');
 2024-04-21 18:14:08.654 +01:00 [DBG] 'CourseContext' disposed.
 2024-04-21 18:14:08.657 +01:00 [DBG] Disposing connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
 2024-04-21 18:14:08.658 +01:00 [DBG] Disposed connection to database '' on server '' (1ms).
+2024-04-21 18:37:21.187 +01:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-04-21 18:37:21.614 +01:00 [DBG] Entity Framework Core 8.0.4 initialized 'CourseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: None
+2024-04-21 18:37:22.059 +01:00 [DBG] 'CourseContext' disposed.
+2024-04-21 18:37:44.767 +01:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-04-21 18:37:45.185 +01:00 [DBG] Entity Framework Core 8.0.4 initialized 'CourseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: None
+2024-04-21 18:37:45.201 +01:00 [DBG] Creating DbConnection.
+2024-04-21 18:37:45.227 +01:00 [DBG] Created DbConnection. (22ms).
+2024-04-21 18:37:45.230 +01:00 [DBG] Migrating using database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:45.235 +01:00 [DBG] Opening connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:47.242 +01:00 [DBG] Opened connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:47.247 +01:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-04-21 18:37:47.253 +01:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (4ms).
+2024-04-21 18:37:47.254 +01:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (8ms).
+2024-04-21 18:37:47.258 +01:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-21 18:37:47.604 +01:00 [INF] Executed DbCommand (345ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-21 18:37:47.606 +01:00 [DBG] Closing connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:47.613 +01:00 [DBG] Closed connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433' (4ms).
+2024-04-21 18:37:47.615 +01:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2024-04-21 18:37:47.615 +01:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2024-04-21 18:37:47.615 +01:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2024-04-21 18:37:47.615 +01:00 [DBG] Opening connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:47.616 +01:00 [DBG] Opened connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:47.616 +01:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-21 18:37:47.968 +01:00 [INF] Executed DbCommand (352ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-21 18:37:47.969 +01:00 [DBG] Closing connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:47.969 +01:00 [DBG] Closed connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433' (0ms).
+2024-04-21 18:37:47.970 +01:00 [DBG] Opening connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:47.971 +01:00 [DBG] Opened connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:47.971 +01:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-04-21 18:37:47.971 +01:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2024-04-21 18:37:47.971 +01:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2024-04-21 18:37:47.971 +01:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-21 18:37:48.298 +01:00 [INF] Executed DbCommand (327ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-21 18:37:48.299 +01:00 [DBG] Closing connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:48.299 +01:00 [DBG] Closed connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433' (0ms).
+2024-04-21 18:37:48.299 +01:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2024-04-21 18:37:48.299 +01:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2024-04-21 18:37:48.299 +01:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2024-04-21 18:37:48.299 +01:00 [DBG] Opening connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:48.299 +01:00 [DBG] Opened connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:48.299 +01:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-21 18:37:48.623 +01:00 [INF] Executed DbCommand (323ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-21 18:37:48.623 +01:00 [DBG] Closing connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:48.623 +01:00 [DBG] Closed connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433' (0ms).
+2024-04-21 18:37:48.641 +01:00 [DBG] Opening connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:48.642 +01:00 [DBG] Opened connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:48.642 +01:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-04-21 18:37:48.642 +01:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2024-04-21 18:37:48.642 +01:00 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2024-04-21 18:37:48.642 +01:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-21 18:37:48.985 +01:00 [INF] Executed DbCommand (343ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-21 18:37:48.988 +01:00 [DBG] Closing data reader to 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:48.988 +01:00 [DBG] A data reader for 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433' is being disposed after spending 1ms reading results.
+2024-04-21 18:37:48.989 +01:00 [DBG] Closing connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:48.989 +01:00 [DBG] Closed connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433' (0ms).
+2024-04-21 18:37:48.998 +01:00 [INF] Applying migration '20240421173722_InitialDataSeed'.
+2024-04-21 18:37:49.028 +01:00 [DBG] Executing 2 update commands as a batch.
+2024-04-21 18:37:49.037 +01:00 [DBG] Opening connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:49.037 +01:00 [DBG] Opened connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:49.039 +01:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2024-04-21 18:37:49.390 +01:00 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2024-04-21 18:37:49.391 +01:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-04-21 18:37:49.391 +01:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2024-04-21 18:37:49.392 +01:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+2024-04-21 18:37:49.392 +01:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Description', N'Instructor', N'Name', N'StartDate') AND [object_id] = OBJECT_ID(N'[Courses]'))
+    SET IDENTITY_INSERT [Courses] ON;
+INSERT INTO [Courses] ([Id], [Description], [Instructor], [Name], [StartDate])
+VALUES (1, N'This is Applied mathematics', N'Adams Smith', N'Applied mathematics', '2024-04-21'),
+(2, N'This is Statistics', N'Willsmith', N'Statistics', '2024-12-04');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Description', N'Instructor', N'Name', N'StartDate') AND [object_id] = OBJECT_ID(N'[Courses]'))
+    SET IDENTITY_INSERT [Courses] OFF;
+2024-04-21 18:37:49.737 +01:00 [INF] Executed DbCommand (345ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Description', N'Instructor', N'Name', N'StartDate') AND [object_id] = OBJECT_ID(N'[Courses]'))
+    SET IDENTITY_INSERT [Courses] ON;
+INSERT INTO [Courses] ([Id], [Description], [Instructor], [Name], [StartDate])
+VALUES (1, N'This is Applied mathematics', N'Adams Smith', N'Applied mathematics', '2024-04-21'),
+(2, N'This is Statistics', N'Willsmith', N'Statistics', '2024-12-04');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Description', N'Instructor', N'Name', N'StartDate') AND [object_id] = OBJECT_ID(N'[Courses]'))
+    SET IDENTITY_INSERT [Courses] OFF;
+2024-04-21 18:37:49.737 +01:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-04-21 18:37:49.738 +01:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2024-04-21 18:37:49.738 +01:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2024-04-21 18:37:49.738 +01:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240421173722_InitialDataSeed', N'8.0.4');
+2024-04-21 18:37:50.065 +01:00 [INF] Executed DbCommand (327ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240421173722_InitialDataSeed', N'8.0.4');
+2024-04-21 18:37:50.067 +01:00 [DBG] Committing transaction.
+2024-04-21 18:37:50.415 +01:00 [DBG] Committed transaction.
+2024-04-21 18:37:50.417 +01:00 [DBG] Disposing transaction.
+2024-04-21 18:37:50.417 +01:00 [DBG] Closing connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:50.417 +01:00 [DBG] Closed connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433' (0ms).
+2024-04-21 18:37:50.418 +01:00 [DBG] 'CourseContext' disposed.
+2024-04-21 18:37:50.420 +01:00 [DBG] Disposing connection to database 'fraudapidb' on server 'tcp:fraudenginepaiserver.database.windows.net,1433'.
+2024-04-21 18:37:50.420 +01:00 [DBG] Disposed connection to database '' on server '' (0ms).
