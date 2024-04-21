@@ -23,22 +23,29 @@ namespace courseManagementApi.Controllers
         [HttpGet("{id}")]
         public ActionResult<CourseDto> GetCourse(int id)
         {
-            var course = CoursesData.CurrentCourses.Courses.FirstOrDefault(course => course.Id == id);
+            throw new Exception("Exception sample");
+            try {
 
-            if (course == null)
+                var course = CoursesData.CurrentCourses.Courses.FirstOrDefault(course => course.Id == id);
+
+                if (course == null)
+                {
+                    _logger.LogInformation($"Course with id {id} wasn't found when accessing the courses");
+                    //without the arguments problem details service get returned
+                    return NotFound();
+
+                    /*
+                     * argument added overrides the problem details service
+                     * 
+                     * return Ok($"Sorry the course with Id : {id}, does not exist");
+                     */
+                return Ok(course);
+                }
+
+            }catch(Exception ex)
             {
-                _logger.LogInformation($"Course with id {id} wasn't found when accessing the courses");
-                //without the arguments problem details service get returned
-                return NotFound();
-
-                /*
-                 * argument added overrides the problem details service
-                 * 
-                 * return Ok($"Sorry the course with Id : {id}, does not exist");
-                 */
+                _logger.LogCritical($"Exception while getting a course with Id {id}", ex);
             }
-
-            return Ok(course);
         }
 
         [HttpPost("create")]
