@@ -30,3 +30,14 @@ C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\obj\Debug\ne
 C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\obj\Debug\net8.0\courseManagementApi.pdb
 C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\obj\Debug\net8.0\courseManagementApi.genruntimeconfig.cache
 C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\obj\Debug\net8.0\ref\courseManagementApi.dll
+C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\obj\Debug\net8.0\courseManagementApi.sourcelink.json
+C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\bin\Debug\net8.0\Serilog.dll
+C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\bin\Debug\net8.0\Serilog.Sinks.File.dll
