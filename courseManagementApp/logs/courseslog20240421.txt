@@ -1,0 +1,299 @@
+2024-04-21 11:12:23.080 +01:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2024-04-21 11:12:23.227 +01:00 [DBG] Hosting starting
+2024-04-21 11:12:23.572 +01:00 [INF] Now listening on: https://localhost:7028
+2024-04-21 11:12:23.573 +01:00 [INF] Now listening on: http://localhost:5218
+2024-04-21 11:12:23.575 +01:00 [DBG] Loaded hosting startup assembly courseManagementApi
+2024-04-21 11:12:23.576 +01:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2024-04-21 11:12:23.577 +01:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2024-04-21 11:12:23.578 +01:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2024-04-21 11:12:23.671 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-21 11:12:23.673 +01:00 [INF] Hosting environment: Development
+2024-04-21 11:12:23.674 +01:00 [INF] Content root path: C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp
+2024-04-21 11:12:23.676 +01:00 [DBG] Hosting started
+2024-04-21 11:12:34.739 +01:00 [DBG] Connection id "0HN31TE8660SA" received FIN.
+2024-04-21 11:12:34.750 +01:00 [DBG] Connection id "0HN31TE8660SA" accepted.
+2024-04-21 11:12:34.753 +01:00 [DBG] Connection id "0HN31TE8660SA" started.
+2024-04-21 11:12:34.757 +01:00 [DBG] Connection id "0HN31TE8660SB" accepted.
+2024-04-21 11:12:34.758 +01:00 [DBG] Connection id "0HN31TE8660SB" started.
+2024-04-21 11:12:34.789 +01:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2024-04-21 11:12:34.847 +01:00 [DBG] Connection id "0HN31TE8660SA" stopped.
+2024-04-21 11:12:34.851 +01:00 [DBG] Connection 0HN31TE8660SB established using the following protocol: "Tls13"
+2024-04-21 11:12:34.852 +01:00 [DBG] Connection id "0HN31TE8660SA" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-04-21 11:12:34.907 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7028/api/courses/1 - null null
+2024-04-21 11:12:34.947 +01:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2024-04-21 11:12:34.977 +01:00 [DBG] 1 candidate(s) found for the request path '/api/courses/1'
+2024-04-21 11:12:35.000 +01:00 [DBG] Endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)' with route pattern 'api/courses/{id}' is valid for the request path '/api/courses/1'
+2024-04-21 11:12:35.004 +01:00 [DBG] Request matched endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)'
+2024-04-21 11:12:35.042 +01:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2024-04-21 11:12:35.048 +01:00 [INF] Executing endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)'
+2024-04-21 11:12:35.082 +01:00 [INF] Route matched with {action = "GetCourse", controller = "Courses"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[courseManagementApi.Models.CourseDto] GetCourse(Int32) on controller courseManagementApi.Controllers.CoursesController (courseManagementApi).
+2024-04-21 11:12:35.087 +01:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2024-04-21 11:12:35.089 +01:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2024-04-21 11:12:35.091 +01:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2024-04-21 11:12:35.094 +01:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2024-04-21 11:12:35.097 +01:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2024-04-21 11:12:35.102 +01:00 [DBG] Executing controller factory for controller courseManagementApi.Controllers.CoursesController (courseManagementApi)
+2024-04-21 11:12:35.105 +01:00 [DBG] Executed controller factory for controller courseManagementApi.Controllers.CoursesController (courseManagementApi)
+2024-04-21 11:12:35.125 +01:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2024-04-21 11:12:35.132 +01:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2024-04-21 11:12:35.136 +01:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-04-21 11:12:35.138 +01:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-04-21 11:12:35.140 +01:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2024-04-21 11:12:35.144 +01:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2024-04-21 11:12:46.647 +01:00 [INF] Executed action courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi) in 11540.8129ms
+2024-04-21 11:12:46.656 +01:00 [INF] Executed endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)'
+2024-04-21 11:12:46.664 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Exception sample
+   at courseManagementApi.Controllers.CoursesController.GetCourse(Int32 id) in C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\Controllers\CoursesController.cs:line 26
+   at lambda_method2(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-04-21 11:12:46.757 +01:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2024-04-21 11:12:46.767 +01:00 [DBG] No information found on request to perform content negotiation.
+2024-04-21 11:12:46.770 +01:00 [DBG] Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types '["application/problem+json","application/problem+xml"]'.
+2024-04-21 11:12:46.778 +01:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/problem+json' to write the response.
+2024-04-21 11:12:46.827 +01:00 [DBG] Connection id "0HN31TE8660SB" completed keep alive response.
+2024-04-21 11:12:46.830 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7028/api/courses/1 - 500 null application/problem+json; charset=utf-8 11933.455ms
+2024-04-21 11:14:56.066 +01:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2024-04-21 11:14:56.850 +01:00 [DBG] Hosting starting
+2024-04-21 11:14:57.239 +01:00 [INF] Now listening on: https://localhost:7028
+2024-04-21 11:14:57.247 +01:00 [INF] Now listening on: http://localhost:5218
+2024-04-21 11:14:57.251 +01:00 [DBG] Loaded hosting startup assembly courseManagementApi
+2024-04-21 11:14:57.253 +01:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2024-04-21 11:14:57.256 +01:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2024-04-21 11:14:57.258 +01:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2024-04-21 11:14:57.390 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-21 11:14:57.394 +01:00 [INF] Hosting environment: Production
+2024-04-21 11:14:57.396 +01:00 [INF] Content root path: C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp
+2024-04-21 11:14:57.402 +01:00 [DBG] Hosting started
+2024-04-21 11:15:23.899 +01:00 [DBG] Connection id "0HN31TFQJDFVQ" received FIN.
+2024-04-21 11:15:23.911 +01:00 [DBG] Connection id "0HN31TFQJDFVQ" accepted.
+2024-04-21 11:15:23.918 +01:00 [DBG] Connection id "0HN31TFQJDFVQ" started.
+2024-04-21 11:15:23.924 +01:00 [DBG] Connection id "0HN31TFQJDFVR" accepted.
+2024-04-21 11:15:23.927 +01:00 [DBG] Connection id "0HN31TFQJDFVR" started.
+2024-04-21 11:15:23.945 +01:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2024-04-21 11:15:24.009 +01:00 [DBG] Connection id "0HN31TFQJDFVQ" stopped.
+2024-04-21 11:15:24.010 +01:00 [DBG] Connection 0HN31TFQJDFVR established using the following protocol: "Tls13"
+2024-04-21 11:15:24.014 +01:00 [DBG] Connection id "0HN31TFQJDFVQ" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-04-21 11:15:24.074 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7028/api/courses/1 - null null
+2024-04-21 11:15:24.093 +01:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2024-04-21 11:15:24.122 +01:00 [DBG] 1 candidate(s) found for the request path '/api/courses/1'
+2024-04-21 11:15:24.128 +01:00 [DBG] Endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)' with route pattern 'api/courses/{id}' is valid for the request path '/api/courses/1'
+2024-04-21 11:15:24.132 +01:00 [DBG] Request matched endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)'
+2024-04-21 11:15:24.146 +01:00 [INF] Executing endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)'
+2024-04-21 11:15:24.197 +01:00 [INF] Route matched with {action = "GetCourse", controller = "Courses"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[courseManagementApi.Models.CourseDto] GetCourse(Int32) on controller courseManagementApi.Controllers.CoursesController (courseManagementApi).
+2024-04-21 11:15:24.202 +01:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2024-04-21 11:15:24.205 +01:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2024-04-21 11:15:24.209 +01:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2024-04-21 11:15:24.213 +01:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2024-04-21 11:15:24.215 +01:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2024-04-21 11:15:24.221 +01:00 [DBG] Executing controller factory for controller courseManagementApi.Controllers.CoursesController (courseManagementApi)
+2024-04-21 11:15:24.226 +01:00 [DBG] Executed controller factory for controller courseManagementApi.Controllers.CoursesController (courseManagementApi)
+2024-04-21 11:15:24.244 +01:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2024-04-21 11:15:24.248 +01:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2024-04-21 11:15:24.251 +01:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-04-21 11:15:24.254 +01:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-04-21 11:15:24.256 +01:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2024-04-21 11:15:24.262 +01:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2024-04-21 11:15:33.318 +01:00 [INF] Executed action courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi) in 9095.2982ms
+2024-04-21 11:15:33.330 +01:00 [INF] Executed endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)'
+2024-04-21 11:15:33.345 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Exception sample
+   at courseManagementApi.Controllers.CoursesController.GetCourse(Int32 id) in C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\Controllers\CoursesController.cs:line 26
+   at lambda_method1(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-04-21 11:15:33.389 +01:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2024-04-21 11:15:33.397 +01:00 [DBG] No information found on request to perform content negotiation.
+2024-04-21 11:15:33.400 +01:00 [DBG] Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types '["application/problem+json","application/problem+xml"]'.
+2024-04-21 11:15:33.407 +01:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/problem+json' to write the response.
+2024-04-21 11:15:33.444 +01:00 [DBG] Connection id "0HN31TFQJDFVR" completed keep alive response.
+2024-04-21 11:15:33.447 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7028/api/courses/1 - 500 null application/problem+json; charset=utf-8 9375.6934ms
+2024-04-21 11:15:55.212 +01:00 [DBG] Connection id "0HN31TFQJDFVS" accepted.
+2024-04-21 11:15:55.220 +01:00 [DBG] Connection id "0HN31TFQJDFVS" started.
+2024-04-21 11:15:55.235 +01:00 [DBG] Connection 0HN31TFQJDFVS established using the following protocol: "Tls13"
+2024-04-21 11:15:55.266 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7028/api/courses/1 - null null
+2024-04-21 11:15:55.414 +01:00 [DBG] 1 candidate(s) found for the request path '/api/courses/1'
+2024-04-21 11:15:55.416 +01:00 [DBG] Endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)' with route pattern 'api/courses/{id}' is valid for the request path '/api/courses/1'
+2024-04-21 11:15:55.419 +01:00 [DBG] Request matched endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)'
+2024-04-21 11:15:55.424 +01:00 [INF] Executing endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)'
+2024-04-21 11:15:55.426 +01:00 [INF] Route matched with {action = "GetCourse", controller = "Courses"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[courseManagementApi.Models.CourseDto] GetCourse(Int32) on controller courseManagementApi.Controllers.CoursesController (courseManagementApi).
+2024-04-21 11:15:55.431 +01:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2024-04-21 11:15:55.433 +01:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2024-04-21 11:15:55.440 +01:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2024-04-21 11:15:55.446 +01:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2024-04-21 11:15:55.448 +01:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2024-04-21 11:15:55.452 +01:00 [DBG] Executing controller factory for controller courseManagementApi.Controllers.CoursesController (courseManagementApi)
+2024-04-21 11:15:55.459 +01:00 [DBG] Executed controller factory for controller courseManagementApi.Controllers.CoursesController (courseManagementApi)
+2024-04-21 11:15:55.464 +01:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2024-04-21 11:15:55.467 +01:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2024-04-21 11:15:55.472 +01:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-04-21 11:15:55.475 +01:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-04-21 11:15:55.478 +01:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2024-04-21 11:15:55.481 +01:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2024-04-21 11:15:57.842 +01:00 [INF] Executed action courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi) in 2390.3558ms
+2024-04-21 11:15:57.847 +01:00 [INF] Executed endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)'
+2024-04-21 11:15:57.850 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Exception sample
+   at courseManagementApi.Controllers.CoursesController.GetCourse(Int32 id) in C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\Controllers\CoursesController.cs:line 26
+   at lambda_method1(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-04-21 11:15:57.892 +01:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2024-04-21 11:15:57.900 +01:00 [DBG] No information found on request to perform content negotiation.
+2024-04-21 11:15:57.901 +01:00 [DBG] Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types '["application/problem+json","application/problem+xml"]'.
+2024-04-21 11:15:57.906 +01:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/problem+json' to write the response.
+2024-04-21 11:15:57.915 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7028/api/courses/1 - 500 null application/problem+json; charset=utf-8 2649.3779ms
+2024-04-21 11:22:56.005 +01:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2024-04-21 11:22:56.309 +01:00 [DBG] Hosting starting
+2024-04-21 11:22:56.765 +01:00 [INF] Now listening on: https://localhost:7028
+2024-04-21 11:22:56.771 +01:00 [INF] Now listening on: http://localhost:5218
+2024-04-21 11:22:56.773 +01:00 [DBG] Loaded hosting startup assembly courseManagementApi
+2024-04-21 11:22:56.777 +01:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2024-04-21 11:22:56.780 +01:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2024-04-21 11:22:56.786 +01:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2024-04-21 11:22:56.920 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-21 11:22:56.923 +01:00 [INF] Hosting environment: Development
+2024-04-21 11:22:56.926 +01:00 [INF] Content root path: C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp
+2024-04-21 11:22:56.928 +01:00 [DBG] Hosting started
+2024-04-21 11:23:01.836 +01:00 [DBG] Connection id "0HN31TK32KS87" accepted.
+2024-04-21 11:23:01.840 +01:00 [DBG] Connection id "0HN31TK32KS87" started.
+2024-04-21 11:23:01.902 +01:00 [DBG] Connection 0HN31TK32KS87 established using the following protocol: "Tls13"
+2024-04-21 11:23:01.980 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7028/api/courses/1 - null null
+2024-04-21 11:23:02.109 +01:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2024-04-21 11:23:02.137 +01:00 [DBG] 1 candidate(s) found for the request path '/api/courses/1'
+2024-04-21 11:23:02.143 +01:00 [DBG] Endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)' with route pattern 'api/courses/{id}' is valid for the request path '/api/courses/1'
+2024-04-21 11:23:02.147 +01:00 [DBG] Request matched endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)'
+2024-04-21 11:23:02.176 +01:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2024-04-21 11:23:02.180 +01:00 [INF] Executing endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)'
+2024-04-21 11:23:02.209 +01:00 [INF] Route matched with {action = "GetCourse", controller = "Courses"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[courseManagementApi.Models.CourseDto] GetCourse(Int32) on controller courseManagementApi.Controllers.CoursesController (courseManagementApi).
+2024-04-21 11:23:02.217 +01:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2024-04-21 11:23:02.219 +01:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2024-04-21 11:23:02.222 +01:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2024-04-21 11:23:02.225 +01:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2024-04-21 11:23:02.228 +01:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2024-04-21 11:23:02.233 +01:00 [DBG] Executing controller factory for controller courseManagementApi.Controllers.CoursesController (courseManagementApi)
+2024-04-21 11:23:02.236 +01:00 [DBG] Executed controller factory for controller courseManagementApi.Controllers.CoursesController (courseManagementApi)
+2024-04-21 11:23:02.254 +01:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2024-04-21 11:23:02.259 +01:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2024-04-21 11:23:02.263 +01:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-04-21 11:23:02.266 +01:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-04-21 11:23:02.268 +01:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2024-04-21 11:23:02.273 +01:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2024-04-21 11:23:02.313 +01:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2024-04-21 11:23:02.325 +01:00 [DBG] No information found on request to perform content negotiation.
+2024-04-21 11:23:02.327 +01:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2024-04-21 11:23:02.328 +01:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2024-04-21 11:23:02.332 +01:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2024-04-21 11:23:02.335 +01:00 [INF] Executing OkObjectResult, writing value of type 'courseManagementApi.Models.CourseDto'.
+2024-04-21 11:23:02.373 +01:00 [INF] Executed action courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi) in 136.0846ms
+2024-04-21 11:23:02.380 +01:00 [INF] Executed endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)'
+2024-04-21 11:23:02.390 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7028/api/courses/1 - 200 null application/json; charset=utf-8 414.2255ms
+2024-04-21 11:44:56.954 +01:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2024-04-21 11:44:57.112 +01:00 [DBG] Hosting starting
+2024-04-21 11:44:57.361 +01:00 [INF] Now listening on: https://localhost:7028
+2024-04-21 11:44:57.362 +01:00 [INF] Now listening on: http://localhost:5218
+2024-04-21 11:44:57.363 +01:00 [DBG] Loaded hosting startup assembly courseManagementApi
+2024-04-21 11:44:57.365 +01:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2024-04-21 11:44:57.366 +01:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2024-04-21 11:44:57.367 +01:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2024-04-21 11:44:57.440 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-21 11:44:57.443 +01:00 [INF] Hosting environment: Development
+2024-04-21 11:44:57.445 +01:00 [INF] Content root path: C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp
+2024-04-21 11:44:57.447 +01:00 [DBG] Hosting started
+2024-04-21 11:45:20.605 +01:00 [DBG] Connection id "0HN31U0I24MSB" received FIN.
+2024-04-21 11:45:20.621 +01:00 [DBG] Connection id "0HN31U0I24MSB" accepted.
+2024-04-21 11:45:20.628 +01:00 [DBG] Connection id "0HN31U0I24MSB" started.
+2024-04-21 11:45:20.639 +01:00 [DBG] Connection id "0HN31U0I24MSC" accepted.
+2024-04-21 11:45:20.641 +01:00 [DBG] Connection id "0HN31U0I24MSC" started.
+2024-04-21 11:45:20.662 +01:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2024-04-21 11:45:20.974 +01:00 [DBG] Connection id "0HN31U0I24MSB" stopped.
+2024-04-21 11:45:20.978 +01:00 [DBG] Connection 0HN31U0I24MSC established using the following protocol: "Tls13"
+2024-04-21 11:45:20.980 +01:00 [DBG] Connection id "0HN31U0I24MSB" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-04-21 11:45:21.037 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7028/api/courses/1 - null null
+2024-04-21 11:45:21.062 +01:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2024-04-21 11:45:21.089 +01:00 [DBG] 1 candidate(s) found for the request path '/api/courses/1'
+2024-04-21 11:45:21.095 +01:00 [DBG] Endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)' with route pattern 'api/courses/{id}' is valid for the request path '/api/courses/1'
+2024-04-21 11:45:21.098 +01:00 [DBG] Request matched endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)'
+2024-04-21 11:45:21.121 +01:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2024-04-21 11:45:21.125 +01:00 [INF] Executing endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)'
+2024-04-21 11:45:21.151 +01:00 [INF] Route matched with {action = "GetCourse", controller = "Courses"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[courseManagementApi.Models.CourseDto] GetCourse(Int32) on controller courseManagementApi.Controllers.CoursesController (courseManagementApi).
+2024-04-21 11:45:21.155 +01:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2024-04-21 11:45:21.157 +01:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2024-04-21 11:45:21.160 +01:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2024-04-21 11:45:21.163 +01:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2024-04-21 11:45:21.165 +01:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2024-04-21 11:45:21.169 +01:00 [DBG] Executing controller factory for controller courseManagementApi.Controllers.CoursesController (courseManagementApi)
+2024-04-21 11:45:21.200 +01:00 [DBG] Executed controller factory for controller courseManagementApi.Controllers.CoursesController (courseManagementApi)
+2024-04-21 11:45:21.216 +01:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2024-04-21 11:45:21.220 +01:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2024-04-21 11:45:21.223 +01:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-04-21 11:45:21.225 +01:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-04-21 11:45:21.227 +01:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2024-04-21 11:45:21.231 +01:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2024-04-21 11:45:21.237 +01:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2024-04-21 11:45:21.243 +01:00 [DBG] No information found on request to perform content negotiation.
+2024-04-21 11:45:21.244 +01:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2024-04-21 11:45:21.246 +01:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2024-04-21 11:45:21.248 +01:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2024-04-21 11:45:21.250 +01:00 [INF] Executing OkObjectResult, writing value of type 'courseManagementApi.Models.CourseDto'.
+2024-04-21 11:45:21.278 +01:00 [INF] Executed action courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi) in 107.5074ms
+2024-04-21 11:45:21.281 +01:00 [INF] Executed endpoint 'courseManagementApi.Controllers.CoursesController.GetCourse (courseManagementApi)'
+2024-04-21 11:45:21.283 +01:00 [DBG] Connection id "0HN31U0I24MSC" completed keep alive response.
+2024-04-21 11:45:21.286 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7028/api/courses/1 - 200 null application/json; charset=utf-8 257.7836ms

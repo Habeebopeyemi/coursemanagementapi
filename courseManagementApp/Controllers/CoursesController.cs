@@ -7,31 +7,47 @@ namespace courseManagementApi.Controllers
     [Route("api/courses")]
      public class CoursesController : ControllerBase
     {
+        private readonly ILogger<CoursesController> _logger;
+        private readonly CoursesData _coursesData;
+        public CoursesController(ILogger<CoursesController> logger, CoursesData coursesData)
+        {
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _coursesData = coursesData ?? throw new ArgumentNullException(nameof(coursesData));
+        }
+
         [HttpGet]
         public ActionResult<IEnumerable<CourseDto>> GetCourses()
         {
-            var courses = CoursesData.CurrentCourses.Courses;
+            var courses = _coursesData.Courses;
             return Ok(courses);
         }
 
         [HttpGet("{id}")]
         public ActionResult<CourseDto> GetCourse(int id)
         {
-            var course = CoursesData.CurrentCourses.Courses.FirstOrDefault(course => course.Id == id);
+            try {
 
-            if (course == null)
+                var course = _coursesData.Courses.FirstOrDefault(course => course.Id == id);
+
+                if (course == null)
+                {
+                    _logger.LogInformation($"Course with id {id} wasn't found when accessing the courses");
+                    //without the arguments problem details service get returned
+                    return NotFound();
+
+                    /*
+                     * argument added overrides the problem details service
+                     * 
+                     * return Ok($"Sorry the course with Id : {id}, does not exist");
+                     */
+                }
+                return Ok(course);
+
+            }catch(Exception ex)
             {
-                //without the arguments problem details service get returned
-                return NotFound();
-
-                /*
-                 * argument added overrides the problem details service
-                 * 
-                 * return Ok($"Sorry the course with Id : {id}, does not exist");
-                 */
+                _logger.LogCritical($"Exception while getting a course with Id {id}", ex);
+                return StatusCode(500, "A problem happened while handling your request.");
             }
-
-            return Ok(course);
         }
 
         [HttpPost("create")]
@@ -40,9 +56,9 @@ namespace courseManagementApi.Controllers
            if (!ModelState.IsValid){
                 return BadRequest();
             }
-            var courseId = CoursesData.CurrentCourses.Courses.Max(course => course.Id);
+            var courseId = _coursesData.Courses.Max(course => course.Id);
             var currentCourse = new CourseDto()
-            {
+            {   
                 Id = ++courseId,
                 Name = course.Name,
                 Description = course.Description,
@@ -50,8 +66,9 @@ namespace courseManagementApi.Controllers
                 StartDate = course.StartDate,
             };
 
-            CoursesData.CurrentCourses.Courses.Add(currentCourse);
+            _coursesData.Courses.Add(currentCourse);
 
+            _logger.LogInformation($"A new course was created at { DateTime.Now.ToString()}");
             return Ok("Course created successfully.");
         }
 
@@ -62,7 +79,7 @@ namespace courseManagementApi.Controllers
             {
                 return BadRequest();
             }
-            var course = CoursesData.CurrentCourses.Courses.FirstOrDefault(course => course.Id == id);
+            var course = _coursesData.Courses.FirstOrDefault(course => course.Id == id);
 
             if(course == null)
             {
@@ -74,6 +91,8 @@ namespace courseManagementApi.Controllers
             course.Instructor = courseUpdate.Instructor;
             course.StartDate = courseUpdate.StartDate;
 
+            _logger.LogInformation($"An update was done on course with Id {id} at {DateTime.Now.ToString()}");
+
             return Ok("Course update successful.");
 
         }
@@ -81,14 +100,16 @@ namespace courseManagementApi.Controllers
         [HttpDelete("{id}")]
         public ActionResult DeleteCourse(int id)
         {
-            var courseToDelete = CoursesData.CurrentCourses.Courses.FirstOrDefault(course => course.Id == id);
+            var courseToDelete = _coursesData.Courses.FirstOrDefault(course => course.Id == id);
 
             if(courseToDelete == null)
             {
                 return NotFound();
             }
 
-            CoursesData.CurrentCourses.Courses.Remove(courseToDelete);
+            _coursesData.Courses.Remove(courseToDelete);
+
+            _logger.LogInformation($"A delete action was done on course with Id {id} at {DateTime.Now.ToString()}");
 
             return Ok("Course deleted successfully.");
 

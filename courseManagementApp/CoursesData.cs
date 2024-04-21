@@ -6,7 +6,7 @@ namespace courseManagementApi
     {
         public List<CourseDto> Courses { get; set; }
 
-        public static CoursesData CurrentCourses { get; } = new CoursesData();
+        //public static CoursesData CurrentCourses { get; } = new CoursesData();
         public CoursesData()
         {
             Courses = new List<CourseDto>()
