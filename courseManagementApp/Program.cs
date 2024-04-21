@@ -1,4 +1,6 @@
 using courseManagementApi;
+using courseManagementApi.DBContexts;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
@@ -31,6 +33,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<CoursesData>();
+builder.Services.AddDbContext<CourseContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("CourseDatabase")));
 
 var app = builder.Build();
 
