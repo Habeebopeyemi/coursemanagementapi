@@ -1,5 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+
 // build dependency injection container : Add services to the container.
 
 builder.Services.AddControllers(options =>

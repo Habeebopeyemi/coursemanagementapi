@@ -30,3 +30,4 @@ C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\obj\Debug\ne
 C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\obj\Debug\net8.0\courseManagementApi.pdb
 C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\obj\Debug\net8.0\courseManagementApi.genruntimeconfig.cache
 C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\obj\Debug\net8.0\ref\courseManagementApi.dll
+C:\Users\opeye\source\repos\courseManagementApp\courseManagementApp\obj\Debug\net8.0\courseManagementApi.sourcelink.json

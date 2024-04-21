@@ -7,6 +7,12 @@ namespace courseManagementApi.Controllers
     [Route("api/courses")]
      public class CoursesController : ControllerBase
     {
+        private readonly ILogger<CoursesController> _logger;
+        public CoursesController(ILogger<CoursesController> logger)
+        {
+            _logger = logger ?? throw new ArgumentException(nameof(logger));
+        }
+
         [HttpGet]
         public ActionResult<IEnumerable<CourseDto>> GetCourses()
         {
@@ -21,6 +27,7 @@ namespace courseManagementApi.Controllers
 
             if (course == null)
             {
+                _logger.LogInformation($"Course with id {id} wasn't found when accessing the courses");
                 //without the arguments problem details service get returned
                 return NotFound();
 
@@ -52,6 +59,7 @@ namespace courseManagementApi.Controllers
 
             CoursesData.CurrentCourses.Courses.Add(currentCourse);
 
+            _logger.LogInformation($"A new course was created at { DateTime.Now.ToString()}");
             return Ok("Course created successfully.");
         }
 
@@ -74,6 +82,8 @@ namespace courseManagementApi.Controllers
             course.Instructor = courseUpdate.Instructor;
             course.StartDate = courseUpdate.StartDate;
 
+            _logger.LogInformation($"An update was done on course with Id {id} at {DateTime.Now.ToString()}");
+
             return Ok("Course update successful.");
 
         }
@@ -89,6 +99,8 @@ namespace courseManagementApi.Controllers
             }
 
             CoursesData.CurrentCourses.Courses.Remove(courseToDelete);
+
+            _logger.LogInformation($"A delete action was done on course with Id {id} at {DateTime.Now.ToString()}");
 
             return Ok("Course deleted successfully.");
 
