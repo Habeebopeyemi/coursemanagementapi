@@ -60,7 +60,7 @@
       },
       {
         "Name": "courseUpdate",
-        "Type": "courseManagementApi.Models.CourseDto",
+        "Type": "courseManagementApi.Entities.Course",
         "IsRequired": true
       }
     ],
@@ -92,7 +92,7 @@
     "Parameters": [
       {
         "Name": "course",
-        "Type": "courseManagementApi.Models.CourseDto",
+        "Type": "courseManagementApi.Entities.Course",
         "IsRequired": true
       }
     ],

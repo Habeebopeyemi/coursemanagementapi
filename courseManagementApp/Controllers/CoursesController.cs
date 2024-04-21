@@ -1,4 +1,6 @@
-﻿using courseManagementApi.Models;
+﻿using courseManagementApi.Entities;
+using courseManagementApi.Models;
+using courseManagementApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace courseManagementApi.Controllers
@@ -8,40 +10,57 @@ namespace courseManagementApi.Controllers
      public class CoursesController : ControllerBase
     {
         private readonly ILogger<CoursesController> _logger;
-        private readonly CoursesData _coursesData;
-        public CoursesController(ILogger<CoursesController> logger, CoursesData coursesData)
+        private readonly ICourseRepository _courseRepository;
+        public CoursesController(ILogger<CoursesController> logger, ICourseRepository courseRepository)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            _coursesData = coursesData ?? throw new ArgumentNullException(nameof(coursesData));
+            _courseRepository = courseRepository ?? throw new ArgumentNullException(nameof(courseRepository));
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<CourseDto>> GetCourses()
+        public async Task<ActionResult<IEnumerable<CourseDto>>> GetCourses()
         {
-            var courses = _coursesData.Courses;
-            return Ok(courses);
+            try { 
+                var courses = await _courseRepository.GetCoursesAsync();
+
+                var results = new List<CourseDto>();
+
+                foreach (var course in courses)
+                {
+                    results.Add(new CourseDto { 
+                        Id = course.Id, 
+                        Name = course.Name, 
+                        Description = course.Description,
+                        Instructor = course.Instructor,
+                        StartDate = course.StartDate,
+                    });
+                }
+
+                return Ok(results);
+             }catch(Exception ex)
+            {
+                _logger.LogInformation($"Exception occur while creating a new course: {ex}");
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpGet("{id}")]
-        public ActionResult<CourseDto> GetCourse(int id)
+        public async Task<ActionResult<CourseDto>> GetCourse(int id)
         {
             try {
 
-                var course = _coursesData.Courses.FirstOrDefault(course => course.Id == id);
+                var course = await _courseRepository.GetCourseAsync(id);
 
-                if (course == null)
+                var result = new CourseDto()
                 {
-                    _logger.LogInformation($"Course with id {id} wasn't found when accessing the courses");
-                    //without the arguments problem details service get returned
-                    return NotFound();
+                    Id = course.Id,
+                    Name = course.Name,
+                    Description = course.Description,
+                    Instructor = course.Instructor,
+                    StartDate = course.StartDate,
+                };
 
-                    /*
-                     * argument added overrides the problem details service
-                     * 
-                     * return Ok($"Sorry the course with Id : {id}, does not exist");
-                     */
-                }
-                return Ok(course);
+                return Ok(result);
 
             }catch(Exception ex)
             {
@@ -51,66 +70,80 @@ namespace courseManagementApi.Controllers
         }
 
         [HttpPost("create")]
-        public ActionResult CreateCourse(CourseDto course)
+        public async Task<ActionResult> CreateCourse(Course course)
         {
            if (!ModelState.IsValid){
-                return BadRequest();
+                throw new Exception($"One or more validation failed, Kindly check the data provided");
             }
-            var courseId = _coursesData.Courses.Max(course => course.Id);
-            var currentCourse = new CourseDto()
-            {   
-                Id = ++courseId,
-                Name = course.Name,
-                Description = course.Description,
-                Instructor = course.Instructor,
-                StartDate = course.StartDate,
-            };
+            try
+            {
+                bool IsCreated = await _courseRepository.CreateCourseAsync(course);
 
-            _coursesData.Courses.Add(currentCourse);
+                if (IsCreated)
+                {
+                    _logger.LogInformation($"A new course was created at {DateTime.Now.ToString()}");
+                }
+                else
+                {
+                    _logger.LogInformation($"An error occured while creating a course at { DateTime.Now.ToString()}");
+                }
 
-            _logger.LogInformation($"A new course was created at { DateTime.Now.ToString()}");
+            }catch(Exception ex )
+            {
+                _logger.LogInformation($"Exception occured while creating a new course on {DateTime.Now.ToString()}");
+                return StatusCode(500, ex.Message);
+            }
+
             return Ok("Course created successfully.");
         }
 
         [HttpPut("{id}")]
-        public ActionResult UpdateCourse(int id, CourseDto courseUpdate)
+        public async Task<ActionResult> UpdateCourse(int id, Course courseUpdate)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
-            var course = _coursesData.Courses.FirstOrDefault(course => course.Id == id);
 
-            if(course == null)
+            try
             {
-                return NotFound(id);
+                bool IsUpdated = await _courseRepository.UpdateCourseAsync(id, courseUpdate);
+
+                if (!IsUpdated)
+                {
+                    return NotFound(id);
+                }
+
+                _logger.LogInformation($"An update was done on course with Id {id} at {DateTime.Now.ToString()}");
+            }catch(Exception ex )
+            {
+                _logger.LogInformation($"Exception occured while updating the course with Id {id} on {DateTime.Now.ToString()}");
+                return StatusCode(500, ex.Message);
             }
-
-            course.Name = courseUpdate.Name;
-            course.Description = courseUpdate.Description;
-            course.Instructor = courseUpdate.Instructor;
-            course.StartDate = courseUpdate.StartDate;
-
-            _logger.LogInformation($"An update was done on course with Id {id} at {DateTime.Now.ToString()}");
 
             return Ok("Course update successful.");
 
         }
 
         [HttpDelete("{id}")]
-        public ActionResult DeleteCourse(int id)
+        public async Task<ActionResult> DeleteCourse(int id)
         {
-            var courseToDelete = _coursesData.Courses.FirstOrDefault(course => course.Id == id);
-
-            if(courseToDelete == null)
+            try
             {
-                return NotFound();
+                bool IsDeleted = await _courseRepository.DeleteCourseAsync(id);
+
+                if(!IsDeleted)
+                {
+                    return NotFound();
+                }
+
+            }catch(Exception ex )
+            {
+                _logger.LogInformation($"Exception occured while deleting a course with Id {id} on {DateTime.Now.ToString()}");
+                return StatusCode(500, ex.Message);
             }
 
-            _coursesData.Courses.Remove(courseToDelete);
-
             _logger.LogInformation($"A delete action was done on course with Id {id} at {DateTime.Now.ToString()}");
-
             return Ok("Course deleted successfully.");
 
         }

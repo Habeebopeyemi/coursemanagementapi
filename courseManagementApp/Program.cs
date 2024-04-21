@@ -1,5 +1,6 @@
 using courseManagementApi;
 using courseManagementApi.DBContexts;
+using courseManagementApi.Services;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -35,6 +36,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<CoursesData>();
 builder.Services.AddDbContext<CourseContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("CourseDatabase")));
+
+//register repository
+builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 
 var app = builder.Build();
 
