@@ -1,5 +1,57 @@
 [
   {
+    "ContainingType": "courseManagementApi.Controllers.UsersController",
+    "Method": "PostUsers",
+    "RelativePath": "api/authenticate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "courseManagementApi.Entities.Users",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "courseManagementApi.Entities.Users",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "courseManagementApi.Controllers.UsersController",
+    "Method": "Login",
+    "RelativePath": "api/authenticate/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userCredential",
+        "Type": "courseManagementApi.Entities.Users",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "courseManagementApi.Controllers.CoursesController",
     "Method": "GetCourses",
     "RelativePath": "api/courses",
