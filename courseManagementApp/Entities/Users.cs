@@ -21,5 +21,7 @@ namespace courseManagementApi.Entities
         [Required]
         [MaxLength(60)]
         public string Password { get; set; }
+
+        public string? Role { get; set; } = "USER";
     }
 }
