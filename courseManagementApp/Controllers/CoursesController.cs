@@ -1,12 +1,14 @@
 ﻿using courseManagementApi.Entities;
 using courseManagementApi.Models;
 using courseManagementApi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace courseManagementApi.Controllers
 {
     [ApiController]
     [Route("api/courses")]
+    [Authorize]
      public class CoursesController : ControllerBase
     {
         private readonly ILogger<CoursesController> _logger;
