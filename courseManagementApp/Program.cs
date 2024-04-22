@@ -1,7 +1,9 @@
 using courseManagementApi;
 using courseManagementApi.DBContexts;
 using courseManagementApi.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()

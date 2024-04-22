@@ -10,6 +10,7 @@ namespace courseManagementApi.DBContexts
             
         }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<Users> Users { get; set; }
 
         //database seeding
         protected override void OnModelCreating(ModelBuilder modelBuilder)
