@@ -27,7 +27,7 @@ namespace courseManagementApi.Services
 
             if (!IsCourseExisting)
             {
-                throw new KeyNotFoundException($"Exception occurs while deleting course with Id {courseId} at {DateTime.Now.ToString()}");
+                throw new KeyNotFoundException($"Error occurs while deleting because course with Id {courseId} does not exist");
             }
 
             var currentCourse = await _context.Courses.FirstOrDefaultAsync(course => course.Id == courseId);

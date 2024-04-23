@@ -38,10 +38,12 @@ namespace courseManagementApi.Controllers
                     });
                 }
 
+                _logger.LogInformation($"Courses retrieved successfully as at {DateTime.Now.ToString()}");
+
                 return Ok(results);
              }catch(Exception ex)
             {
-                _logger.LogInformation($"Exception occur while creating a new course: {ex}");
+                _logger.LogError($"Exception occur while creating a new course: {ex.Message}");
                 return BadRequest(ex.Message);
             }
         }
@@ -62,11 +64,12 @@ namespace courseManagementApi.Controllers
                     StartDate = course.StartDate,
                 };
 
+                _logger.LogInformation($"Course with Id {id} was successfully retrieved");
                 return Ok(result);
 
             }catch(Exception ex)
             {
-                _logger.LogCritical($"Exception while getting a course with Id {id}", ex);
+                _logger.LogError($"Exception while getting a course with Id {id}: {ex.Message}" );
                 return StatusCode(500, "A problem happened while handling your request.");
             }
         }
@@ -92,7 +95,7 @@ namespace courseManagementApi.Controllers
 
             }catch(Exception ex )
             {
-                _logger.LogInformation($"Exception occured while creating a new course on {DateTime.Now.ToString()}");
+                _logger.LogInformation($"Exception occured while creating a new course on {DateTime.Now.ToString()}, here is the details: {ex.Message}");
                 return StatusCode(500, ex.Message);
             }
 

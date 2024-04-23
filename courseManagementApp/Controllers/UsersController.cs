@@ -27,15 +27,8 @@ namespace courseManagementApi.Controllers
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration)); 
         }
 
-        // GET: api/Users
-        /*
-         
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Users>>> GetUsers()
-        {
-            return await _context.Users.ToListAsync();
-        }
 
+        /*
         // GET: api/Users/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Users>> GetUsers(int id)
@@ -108,6 +101,10 @@ namespace courseManagementApi.Controllers
                 throw new Exception($"One or more validation failed, Kindly check the data provided");
             }
 
+            if(_context.Users.Any(u => u.UserEmail == user.UserEmail)) {
+                return BadRequest("User already exist, kindly login.");
+            }
+
             var newUser = new Users { Username = user.Username, UserEmail = user.UserEmail, Password = BCrypt.Net.BCrypt.HashPassword(user.Password) };
             _context.Users.Add(newUser);
             await _context.SaveChangesAsync();
@@ -125,7 +122,7 @@ namespace courseManagementApi.Controllers
                 return Unauthorized();
             }
 
-            // var authToken = GenerateJwtToken(admin);
+            // generating session token for user
             var securityKey = new SymmetricSecurityKey(
                Convert.FromBase64String(_configuration["Authentication:SecretForKey"]));
             var signingCredentials = new SigningCredentials(
@@ -133,14 +130,32 @@ namespace courseManagementApi.Controllers
 
             var claimsForToken = new List<Claim>();
             claimsForToken.Add(new Claim("sub", user.Id.ToString()));
-            claimsForToken.Add(new Claim("given_name", user.Username));
+
+            //check for null values
+            if (!string.IsNullOrEmpty(user.Username))
+            {
+                claimsForToken.Add(new Claim("given_name", user.Username));
+            }
+            else
+            {
+                claimsForToken.Add(new Claim("given_name", "DefaultUsername"));
+            }
+
+            if(!string.IsNullOrEmpty(user.Role))
+            {
+                claimsForToken.Add(new Claim("role", user.Role));
+            }
+            else
+            {
+                claimsForToken.Add(new Claim("role", "USER"));
+            }
 
             var jwtSecurityToken = new JwtSecurityToken(
                 _configuration["Authentication:Issuer"],
                 _configuration["Authentication:Audience"],
                 claimsForToken,
                 DateTime.UtcNow,
-                DateTime.UtcNow.AddHours(1),
+                DateTime.UtcNow.AddMinutes(5),
                 signingCredentials);
 
             var tokenToReturn = new JwtSecurityTokenHandler()
@@ -148,6 +163,16 @@ namespace courseManagementApi.Controllers
 
             return Ok(tokenToReturn);
         }
+
+        // GET: api/Users
+        [HttpGet]
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<Users>>> GetUsers()
+        {
+            return await _context.Users.ToListAsync();
+        }
+
+         
         private bool UsersExists(int id)
         {
             return _context.Users.Any(e => e.Id == id);
